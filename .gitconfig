@@ -1,0 +1,19 @@
+
+[core]
+	filemode = false
+	excludesfile = ~/.gitignore
+	autocrlf = false
+[alias]
+	co = checkout
+	st = status
+	p = log --oneline --abbrev-commit
+	last = log -1 HEAD
+	graph = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
+	ci = commit
+	unstage = reset HEAD --
+	visual = !gitk
+	d = diff
+[push]
+	default = current
+[include]
+	path = ~/.local/.gitconfig
