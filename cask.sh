@@ -14,6 +14,7 @@ brew cask install vagrant-bar
 brew cask install packer
 brew cask install vault
 brew cask install node
+brew cask install go
 brew cask install mysql-utilities
 brew cask install mysqlworkbench
 
