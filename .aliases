@@ -1,0 +1,39 @@
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though.
+alias -- -="cd -"
+
+# Typos.
+alias gti=git
+alias brwe=brew
+
+# Enable aliases to be sudo’ed.
+alias sudo='sudo '
+
+# Show/hide hidden files in Finder.
+alias hide-files="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+alias show-files="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+
+# Hide/show all desktop icons (useful when presenting).
+alias hide-desktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias show-desktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# Recursively delete `.DS_Store` files.
+alias dsfiles-delete="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Flush Directory Service cache.
+alias flush-dscache="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+# Reload the shell (i.e. invoke as a login shell).
+alias reload="exec $SHELL -l"
+
+# PlistBuddy alias, because sometimes `defaults` just doesn’t cut it.
+alias plistbuddy="/usr/libexec/PlistBuddy"
+
+# One of @janmoesen’s ProTip™s.
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+	alias "$method"="lwp-request -m '$method'"
+done
