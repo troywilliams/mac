@@ -1,3 +1,8 @@
+# Create a new directory and parents then enter it.
+function mkcd() {
+	mkdir -p "$@" && cd "$_";
+}
+
 google() {
     search=""
     echo "Googling: $@"
@@ -7,7 +12,7 @@ google() {
     /usr/bin/open -a "/Applications/Google Chrome.app" "http://www.google.com/search?q=$search"
 }
 
-# who is using the laptop's iSight camera?
+# who is using the laptop's iSight camera? Does not work!
 camerausedby() {
 	echo "Checking to see who is using the iSight camera… 📷"
 	usedby=$(lsof | grep -w "AppleCamera\|USBVDC\|iSight" | awk '{printf $2"\n"}' | xargs ps)
