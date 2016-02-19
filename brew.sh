@@ -61,6 +61,9 @@ brew install composer
 # Network.
 brew install mtr
 
+# Monitering and logging.
+brew install monit
+
 # Other.
 brew install webkit2png
 brew install imagemagick --with-webp
