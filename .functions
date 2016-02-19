@@ -3,6 +3,7 @@ function mkcd() {
 	mkdir -p "$@" && cd "$_";
 }
 
+# Search via Google, open in Chrome.
 google() {
     search=""
     echo "Googling: $@"
@@ -10,11 +11,4 @@ google() {
         search="$search%20$term"
     done
     /usr/bin/open -a "/Applications/Google Chrome.app" "http://www.google.com/search?q=$search"
-}
-
-# who is using the laptop's iSight camera? Does not work!
-camerausedby() {
-	echo "Checking to see who is using the iSight camera… 📷"
-	usedby=$(lsof | grep -w "AppleCamera\|USBVDC\|iSight" | awk '{printf $2"\n"}' | xargs ps)
-	echo -e "Recent camera uses:\n$usedby"
 }
