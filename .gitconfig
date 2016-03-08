@@ -4,16 +4,37 @@
 	excludesfile = ~/.gitignore
 	autocrlf = false
 [alias]
+  b = branch
 	co = checkout
 	st = status
-	p = log --oneline --abbrev-commit
+	p = log --oneline
 	last = log -1 HEAD
 	graph = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
 	ci = commit
 	unstage = reset HEAD --
 	visual = !gitk
 	d = diff
-[push]
-	default = current
+	[color]
+		ui = always
+	[color "diff"]
+		meta = yellow bold
+		commit = green bold
+		frag = magenta bold
+		old = red bold
+		new = green bold
+		whitespace = red reverse
+	[color "diff-highlight"]
+		oldNormal = red bold
+		oldHighlight = "red bold 52"
+		newNormal = "green bold"
+		newHighlight = "green bold 22"
+	[color "branch"]
+	current = green reverse
+	local = yellow
+	remote = green
+	[color "status"]
+		added = yellow
+		changed = green
+		untracked = cyan
 [include]
 	path = ~/.local/.gitconfig
