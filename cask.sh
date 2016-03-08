@@ -28,6 +28,7 @@ brew cask install vlc
 
 # Other
 brew cask install gpgtools
+brew cask install tcl
 
 # cleanup.
 brew cask cleanup
