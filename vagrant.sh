@@ -8,6 +8,7 @@ sudo -v
 
 # Local domain resolution.
 vagrant plugin install landrush
+vagrant plugin install vagrant-hostsupdater
 
 # Providers.
 vagrant plugin install vagrant-aws
