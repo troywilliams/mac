@@ -50,6 +50,7 @@ brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
 
 brew install homebrew/php/php56 --with-gmp
+brew install homebrew/php/php56-xhprof
 
 # Git.
 brew install git
@@ -63,6 +64,7 @@ brew install mtr
 
 # Monitering and logging.
 brew install monit
+brew install percona-toolkit
 
 # Other.
 brew install webkit2png
