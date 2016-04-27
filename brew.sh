@@ -70,6 +70,7 @@ brew install percona-toolkit
 brew install webkit2png
 brew install imagemagick --with-webp
 brew install ffmpeg --with-libvpx
+brew install graphviz
 
 # Remove outdated versions from the cellar.
 brew cleanup
