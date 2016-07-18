@@ -71,6 +71,7 @@ brew install webkit2png
 brew install imagemagick --with-webp
 brew install ffmpeg --with-libvpx
 brew install graphviz
+brew install gs
 
 # Remove outdated versions from the cellar.
 brew cleanup
