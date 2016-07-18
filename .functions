@@ -3,6 +3,23 @@ function mkcd() {
 	mkdir -p "$@" && cd "$_";
 }
 
+# Make one or many png images in current directory.
+function mkpng() {
+  local s=1; # Start.
+  local n=$1; # Number of files to create.
+  if ! [[ $n =~ ^[\-0-9]+$ ]] || (( n < 0));
+  then
+    n=1
+  fi
+  # Loop and make png.
+  for (( i=$s; i<=$n; i++ ))
+  do
+    local filename=image-$i.png
+    echo Making png $filename
+    convert -size 256x256 xc:black -gravity south -background orange -splice 0x20 -annotate +0+2 "${PWD}/$filename" $filename
+  done
+}
+
 # Search via Google, open in Chrome.
 google() {
     search=""
