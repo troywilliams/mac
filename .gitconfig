@@ -1,7 +1,6 @@
-
 [core]
 	filemode = false
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/lwtxw/.gitignore_global
 	autocrlf = false
 [alias]
   b = branch
@@ -14,27 +13,39 @@
 	unstage = reset HEAD --
 	visual = !gitk
 	d = diff
-	[color]
-		ui = always
-	[color "diff"]
-		meta = yellow bold
-		commit = green bold
-		frag = magenta bold
+	fix = config --replace-all core.filemode false
+[color]
+	ui = always
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	rag = magenta bold
 		old = red bold
 		new = green bold
 		whitespace = red reverse
-	[color "diff-highlight"]
+[color "diff-highlight"]
 		oldNormal = red bold
 		oldHighlight = "red bold 52"
 		newNormal = "green bold"
-		newHighlight = "green bold 22"
-	[color "branch"]
+newHighlight = "green bold 22"
+[color "branch"]
 	current = green reverse
 	local = yellow
 	remote = green
-	[color "status"]
+[color "status"]
 		added = yellow
 		changed = green
 		untracked = cyan
 [include]
 	path = ~/.local/.gitconfig
+[init]
+	templatedir = ~/.git_template
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+	default = matching
