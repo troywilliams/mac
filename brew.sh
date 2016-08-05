@@ -62,9 +62,12 @@ brew install composer
 # Network.
 brew install mtr
 
-# Monitering and logging.
+# Monitoring and logging.
 brew install monit
 brew install percona-toolkit
+
+# Utilities.
+brew install rename
 
 # Other.
 brew install webkit2png
