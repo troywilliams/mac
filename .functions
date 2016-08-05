@@ -1,5 +1,5 @@
 # Create a new directory and parents then enter it.
-function mkcd() {
+function md() {
 	mkdir -p "$@" && cd "$_";
 }
 
@@ -11,4 +11,21 @@ google() {
         search="$search%20$term"
     done
     /usr/bin/open -a "/Applications/Google Chrome.app" "http://www.google.com/search?q=$search"
+}
+
+# Make one or many png images in current directory.
+function mkpng() {
+  local s=1; # Start.
+  local n=$1; # Number of files to create.
+  if ! [[ $n =~ ^[\-0-9]+$ ]] || (( n < 0));
+  then
+    n=1
+  fi
+  # Loop and make png.
+  for (( i=$s; i<=$n; i++ ))
+  do
+    local filename=image-$i.png
+    echo Making png $filename
+    convert -size 180x340 xc:black -gravity south -background orange -splice 0x20 -annotate +0+2 "${PWD}/$filename" $filename
+  done
 }
