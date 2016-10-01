@@ -56,6 +56,9 @@ brew install homebrew/php/php56-xhprof
 brew install git
 brew install git-lfs
 
+# Ansible
+brew install ansible
+
 # Composer.
 brew install composer
 
