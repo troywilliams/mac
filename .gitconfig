@@ -14,38 +14,32 @@
 	visual = !gitk
 	d = diff
 	fix = config --replace-all core.filemode false
+	ac = !git add -A && git commit
 [color]
 	ui = always
 [color "diff"]
 	meta = yellow bold
 	commit = green bold
 	rag = magenta bold
-		old = red bold
-		new = green bold
-		whitespace = red reverse
+	old = red bold
+	new = green bold
+	whitespace = red reverse
 [color "diff-highlight"]
-		oldNormal = red bold
-		oldHighlight = "red bold 52"
-		newNormal = "green bold"
-newHighlight = "green bold 22"
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+  newHighlight = "green bold 22"
 [color "branch"]
 	current = green reverse
 	local = yellow
 	remote = green
 [color "status"]
-		added = yellow
-		changed = green
-		untracked = cyan
+	added = yellow
+	changed = green
+	untracked = red
 [include]
 	path = ~/.local/.gitconfig
 [init]
-	templatedir = ~/.git_template
-
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+	# templatedir = ~/.git_template
 [push]
 	default = matching
