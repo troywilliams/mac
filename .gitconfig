@@ -1,7 +1,6 @@
-
 [core]
 	filemode = false
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/lwtxw/.gitignore_global
 	autocrlf = false
 [alias]
   b = branch
@@ -14,27 +13,33 @@
 	unstage = reset HEAD --
 	visual = !gitk
 	d = diff
-	[color]
-		ui = always
-	[color "diff"]
-		meta = yellow bold
-		commit = green bold
-		frag = magenta bold
-		old = red bold
-		new = green bold
-		whitespace = red reverse
-	[color "diff-highlight"]
-		oldNormal = red bold
-		oldHighlight = "red bold 52"
-		newNormal = "green bold"
-		newHighlight = "green bold 22"
-	[color "branch"]
+	fix = config --replace-all core.filemode false
+	ac = !git add -A && git commit
+[color]
+	ui = always
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	rag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+  newHighlight = "green bold 22"
+[color "branch"]
 	current = green reverse
 	local = yellow
 	remote = green
-	[color "status"]
-		added = yellow
-		changed = green
-		untracked = cyan
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = red
 [include]
 	path = ~/.local/.gitconfig
+[init]
+	# templatedir = ~/.git_template
+[push]
+	default = matching

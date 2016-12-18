@@ -6,6 +6,11 @@ for file in ~/.{path,extra,bash_prompt,exports,aliases,functions}; do
 done
 unset file
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+source /usr/local/etc/bash_completion.d/git-completion.bash
+
 # Timestamps for later analysis
 # - www.debian-administration.org/users/rossen/weblog/1
 #export HISTTIMEFORMAT='%F %T '
@@ -22,6 +27,12 @@ shopt -s cmdhist # Save multi-line commands as one command.
 export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history"
 
 # Save and reload the history after each command finishes.
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+#export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # Tricking out the prompt.
+#source /usr/local/etc/bash_completion.d/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
 export PS1="[\u]🚀 \w $ "
+
+# Cheatsheets.
+export EDITOR=/usr/local/bin/vi
+export CHEATCOLORS=true
