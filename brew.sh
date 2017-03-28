@@ -7,7 +7,7 @@ sudo -v
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
 
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
@@ -56,10 +56,10 @@ brew install homebrew/php/php56-xhprof
 brew install git
 brew install git-lfs
 
-# Ansible
+# DevOps.
 brew install ansible
-
-# Composer.
+brew install node
+brew install vault
 brew install composer
 
 # Network.
