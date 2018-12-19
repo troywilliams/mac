@@ -1,10 +1,12 @@
 [core]
 	filemode = false
-	excludesfile = /Users/lwtxw/.gitignore_global
 	autocrlf = false
+	excludesfile = ~/.gitignore_global
 [alias]
-  b = branch
+    b = branch
 	co = checkout
+	cp = cherry-pick
+	s = status
 	st = status
 	p = log --oneline
 	last = log -1 HEAD
@@ -15,8 +17,10 @@
 	d = diff
 	fix = config --replace-all core.filemode false
 	ac = !git add -A && git commit
+	undocommit = reset HEAD~
+
 [color]
-	ui = always
+	ui = auto
 [color "diff"]
 	meta = yellow bold
 	commit = green bold
@@ -28,7 +32,7 @@
 	oldNormal = red bold
 	oldHighlight = "red bold 52"
 	newNormal = "green bold"
-  newHighlight = "green bold 22"
+    newHighlight = "green bold 22"
 [color "branch"]
 	current = green reverse
 	local = yellow
@@ -42,4 +46,6 @@
 [init]
 	# templatedir = ~/.git_template
 [push]
-	default = matching
+	# default = matching
+	default = current
+	followTags = true
