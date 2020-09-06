@@ -3,9 +3,12 @@
 	autocrlf = false
 	excludesfile = ~/.gitignore_global
 [alias]
+	amend = commit --amend --all
+    ac = !git add -A && git commit
     b = branch
 	co = checkout
 	cp = cherry-pick
+	d = diff
 	s = status
 	st = status
 	p = log --oneline
@@ -13,12 +16,9 @@
 	graph = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
 	ci = commit
 	unstage = reset HEAD --
-	visual = !gitk
-	d = diff
-	fix = config --replace-all core.filemode false
-	ac = !git add -A && git commit
 	undocommit = reset HEAD~
-
+	visual = !gitk
+	fix = config --replace-all core.filemode false
 [color]
 	ui = auto
 [color "diff"]
